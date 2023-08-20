@@ -1151,13 +1151,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "nannou-wasm-demo"
-version = "0.1.0"
-dependencies = [
- "nannou",
-]
-
-[[package]]
 name = "nannou_core"
 version = "0.18.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1799,6 +1792,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bd5ac56c121948b4879bba9e519852c211bcdd8f014efff766441deff0b91bdb"
 dependencies = [
  "num-traits",
+]
+
+[[package]]
+name = "sketch1"
+version = "0.1.0"
+dependencies = [
+ "nannou",
 ]
 
 [[package]]

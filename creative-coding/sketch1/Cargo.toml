@@ -1,5 +1,5 @@
 [package]
-name = "nannou-wasm-demo"
+name = "sketch1"
 version = "0.1.0"
 edition = "2021"
 
