@@ -16,7 +16,7 @@ mod monitor {
         big_data: Vec<u8>,
     }
 
-    pub type OptionFn = Box<dyn FnOnce(&mut Monitor) -> ()>;
+    pub type OptionFn = Box<dyn FnOnce(&mut Monitor)>;
 
     pub fn new(options: Vec<OptionFn>) -> Monitor {
         let mut monitor = Monitor {
@@ -50,7 +50,7 @@ mod monitor {
     pub fn with_tech(tech: &str) -> OptionFn {
         let tech = tech.to_string();
         Box::new(move |monitor: &mut Monitor| {
-            monitor.tech = tech.clone();
+            monitor.tech = tech;
         })
     }
 

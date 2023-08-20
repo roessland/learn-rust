@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "exercise-01-implicit-conversions",
+    "exercise-02-arrays-and-for-loops",
+    "exercise-03-designing-a-library",
+    "exercise-04-iterators-and-ownership",
+    "exercise-05-health-statistics",
+]
