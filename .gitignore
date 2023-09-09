@@ -3,3 +3,4 @@ scratch
 target
 **/target
 .DS_Store
+**/.idea

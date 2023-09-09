@@ -13,6 +13,10 @@ struct Model {
     radius: f32,
 }
 
+fn yolo(banana: Hey) -> Hoho {
+    unimplemented!();
+}
+
 fn model(_app: &App) -> Model {
     Model::default()
 }
@@ -22,16 +26,17 @@ fn min_screen_dimension(_app: &App) -> f32 {
     f32::min(inner_size.0, inner_size.1)
 }
 
+// TODO: yolo
 fn update(app: &App, model: &mut Model, _update: Update) {
     let scale = f64::sin(app.duration.since_start.as_secs_f64()) as f32;
     let min_screen_dimension = min_screen_dimension(app);
-    let padding =  0.05 * min_screen_dimension;
+    let padding = 0.05 * min_screen_dimension;
     let min_radius = padding;
-    let max_radius =  min_screen_dimension  / 2.0 - padding;
+    let max_radius = min_screen_dimension / 2.0 - padding;
     model.radius = min_radius + scale * (max_radius - min_radius);
 }
 
-fn view(app: &App, model: &Model, frame: Frame){
+fn view(app: &App, model: &Model, frame: Frame) {
     frame.clear(PLUM);
     let draw = app.draw();
 
@@ -42,3 +47,4 @@ fn view(app: &App, model: &Model, frame: Frame){
 
     draw.to_frame(app, &frame).unwrap();
 }
+

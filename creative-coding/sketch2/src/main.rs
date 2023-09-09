@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 
+use std::time::Duration;
 use nannou::prelude::*;
 
 fn main() {
@@ -7,6 +8,7 @@ fn main() {
         .update(update_step)
         .size(640, 640)
         .simple_window(view)
+        .loop_mode(LoopMode::Rate { update_interval: Duration::from_millis(300) })
         .run();
 }
 
@@ -29,7 +31,7 @@ struct Model {
 fn model(_app: &App) -> Model {
     let mut m = Model::default();
     m.rope = Rope {
-        nodes: vec![Node::default(); 25],
+        nodes: vec![Node::default(); 100],
     };
     for i in 0..m.rope.nodes.len() {
         m.rope.nodes[i].pos = Vec2::new(0.2 * i.to_f32().unwrap(), 0.0);
@@ -63,7 +65,7 @@ fn update_substep(app: &App, model: &mut Model, _update: Update, dt: f32) {
     }
 
     // Apply constraints
-    for _iterations in 0..40 {
+    for _iterations in 0..10 {
         for i in 0..nodes.len()-1 {
 
             // move node 0 towards mouse
